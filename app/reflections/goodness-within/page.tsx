@@ -246,12 +246,14 @@ export default function GoodnessWithinPage() {
         </div>
 
 
-        {/* Like Button */}
-
-        <div className="mt-14 flex justify-center">
-          <LikeButton postSlug="goodness-within" />
-        </div>
-
+        
+                {/* Like */}
+        
+                <div className="mt-16 flex justify-center sm:justify-start">
+                  <LikeButton postSlug="the-good-shepherd" />
+                </div>
+        
+                
       </article>
     </main>
   );
