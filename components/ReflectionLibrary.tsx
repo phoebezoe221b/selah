@@ -1,138 +1,136 @@
 "use client";
 
-import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
-
-const reflections = [
-  {
-    title: "The Good Shepherd",
-    href: "/reflections/the-good-shepherd",
-    available: true,
-    featured: true,
-  },
-  {
-    title: "Goodness Within",
-  href: "/reflections/goodness-within",
-  available: true,
-  featured: false,
-  },
-  {
-    title: "Peace in the Storm",
-    available: false,
-    featured: false,
-  },
-];
 
 export default function ReflectionLibrary() {
   return (
-    <section className="py-28 bg-[var(--sea-50)]">
-      <div className="section">
+    <section className="relative bg-[var(--sea-50)] py-28">
+      <div className="mx-auto max-w-6xl px-6 md:px-10">
 
+        {/* Section Heading */}
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.8 }}
         >
-          <p className="text-center uppercase tracking-[0.45em] text-sm text-[var(--gold)]">
+          <p className="text-center text-lg uppercase tracking-[0.45em] text-[var(--gold)]">
             Library
           </p>
 
-          <h2 className="mt-4 text-center font-serif text-5xl text-[var(--sea-800)]">
-            More Writings
-          </h2>
-
           <p className="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-[var(--muted)]">
-            A growing collection of reflections, poems and meditations inspired
-            by the living Word of God.
+            A growing collection of reflections, poems and meditations
+            inspired by the living Word of God.
           </p>
 
-          <div className="gold-divider my-14" />
+          <div className="mx-auto my-14 h-px max-w-32 bg-gradient-to-r from-transparent via-[var(--gold)] to-transparent" />
+        </motion.div>
 
-          <div className="grid max-w-6xl mx-auto gap-8 md:grid-cols-2 lg:grid-cols-3">
+        {/* Cards */}
+        <div className="mx-auto max-w-6xl space-y-10">
 
-            {reflections.map((reflection) => (
-              <motion.div
-                key={reflection.title}
-                whileHover={{
-                  y: -10,
-                }}
-                transition={{
-                  duration: 0.35,
-                }}
-                className="
-                  relative
-                  overflow-hidden
-                  rounded-[32px]
-                  border
-                  border-[var(--border)]
-                  bg-white
-                  p-8
-                  shadow-[0_20px_60px_rgba(0,0,0,.06)]
-                "
-              >
+          {/* THE GOOD SHEPHERD */}
+          <motion.a
+            href="/reflections/the-good-shepherd"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 0.8 }}
+            className="group block overflow-hidden rounded-[36px] border border-[var(--border)] bg-white shadow-[0_30px_80px_rgba(0,0,0,.08)]"
+          >
+            <div className="grid lg:grid-cols-2">
 
-                {/* Featured Badge */}
+              {/* Image */}
+              <div className="relative h-[360px] overflow-hidden md:h-[420px]">
+                <Image
+                  src="/images/good-shepherd.jpg"
+                  alt="The Good Shepherd"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
 
-                {reflection.featured && (
-                  <span
-                    className="
-                      absolute
-                      right-5
-                      top-5
-                      rounded-full
-                      bg-[var(--gold)]
-                      px-4
-                      py-1
-                      text-xs
-                      uppercase
-                      tracking-[0.25em]
-                      text-white
-                    "
-                  >
-                    Featured
-                  </span>
-                )}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent" />
+              </div>
 
-                <h3 className="font-serif text-4xl leading-tight text-[var(--sea-900)]">
-                  {reflection.title}
+              {/* Content */}
+              <div className="flex flex-col justify-center p-8 md:p-12">
+
+                <p className="text-sm uppercase tracking-[0.35em] text-[var(--gold)]">
+                  Reflection
+                </p>
+
+                <h3 className="mt-4 font-serif text-4xl leading-tight text-[var(--sea-900)] md:text-5xl">
+                  The Good Shepherd
                 </h3>
 
-                <div className="mt-8 h-px bg-[var(--sea-200)]" />
+                <p className="mt-8 text-lg leading-9 text-[var(--muted)]">
+                  My worries and anxieties weigh heavily; they pull me down
+                  like Earth&apos;s gravity. Yet the Good Shepherd reached out
+                  with firm yet tender hands, lifted me upon His shoulders,
+                  and restored my soul.
+                </p>
 
-                {reflection.available ? (
-                  <Link
-                    href={reflection.href!}
-                    className="
-                      mt-8
-                      inline-flex
-                      items-center
-                      text-lg
-                      font-medium
-                      text-[var(--sea-700)]
-                      transition-colors
-                      hover:text-[var(--gold)]
-                    "
-                  >
-                    Read Writing →
-                  </Link>
-                ) : (
-                  <p
-                    className="
-                      mt-8
-                      italic
-                      text-[var(--muted)]
-                    "
-                  >
-                    Currently Being Written
-                  </p>
-                )}
+                <div className="mt-12 flex items-center gap-3 text-lg font-medium text-[var(--sea-700)] transition-all duration-300 group-hover:gap-5 group-hover:text-[var(--gold)]">
+                  Read Reflection →
+                </div>
 
-              </motion.div>
-            ))}
+              </div>
+            </div>
+          </motion.a>
 
-          </div>
-        </motion.div>
+
+          {/* GOODNESS WITHIN */}
+          <motion.a
+            href="/reflections/goodness-within"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 0.8 }}
+            className="group block overflow-hidden rounded-[36px] border border-[var(--border)] bg-white shadow-[0_30px_80px_rgba(0,0,0,.08)]"
+          >
+            <div className="grid lg:grid-cols-2">
+
+              {/* Image */}
+              <div className="relative h-[360px] overflow-hidden md:h-[420px]">
+                <Image
+                  src="/images/goodness-within.png"
+                  alt="Goodness Within"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+
+                <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent" />
+              </div>
+
+              {/* Content */}
+              <div className="flex flex-col justify-center p-8 md:p-12">
+
+                <p className="text-sm uppercase tracking-[0.35em] text-[var(--gold)]">
+                  Reflection
+                </p>
+
+                <h3 className="mt-4 font-serif text-4xl leading-tight text-[var(--sea-900)] md:text-5xl">
+                  Goodness Within
+                </h3>
+
+                <p className="mt-8 text-lg leading-9 text-[var(--muted)]">
+                  Biblical goodness is more than simply being a good person.
+                  It is the goodness of God working within us and flowing
+                  outward through a life that remains connected to Him.
+                </p>
+
+                <div className="mt-12 flex items-center gap-3 text-lg font-medium text-[var(--sea-700)] transition-all duration-300 group-hover:gap-5 group-hover:text-[var(--gold)]">
+                  Read Reflection →
+                </div>
+
+              </div>
+            </div>
+          </motion.a>
+
+        </div>
       </div>
     </section>
   );
