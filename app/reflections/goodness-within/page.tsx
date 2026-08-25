@@ -250,7 +250,7 @@ export default function GoodnessWithinPage() {
                 {/* Like */}
         
                 <div className="mt-16 flex justify-center sm:justify-start">
-                  <LikeButton postSlug="the-good-shepherd" />
+                  <LikeButton postSlug="the-goodness-within" />
                 </div>
         
                 
