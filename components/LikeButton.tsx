@@ -7,6 +7,25 @@ type LikeButtonProps = {
   postSlug: string;
 };
 
+const VISITOR_KEY = "selah_visitor_id";
+
+function getVisitorId(): string {
+  let visitorId = localStorage.getItem(VISITOR_KEY);
+
+  if (!visitorId) {
+    visitorId =
+      Date.now().toString(36) +
+      "-" +
+      Math.random().toString(36).substring(2) +
+      "-" +
+      Math.random().toString(36).substring(2);
+
+    localStorage.setItem(VISITOR_KEY, visitorId);
+  }
+
+  return visitorId;
+}
+
 export default function LikeButton({ postSlug }: LikeButtonProps) {
   const [liked, setLiked] = useState(false);
   const [likes, setLikes] = useState(0);
@@ -15,8 +34,12 @@ export default function LikeButton({ postSlug }: LikeButtonProps) {
   useEffect(() => {
     async function loadLikes() {
       try {
+        const visitorId = getVisitorId();
+
         const response = await fetch(
-          `/api/likes?slug=${encodeURIComponent(postSlug)}`
+          `/api/likes?slug=${encodeURIComponent(
+            postSlug
+          )}&visitorId=${encodeURIComponent(visitorId)}`
         );
 
         if (!response.ok) {
@@ -38,11 +61,13 @@ export default function LikeButton({ postSlug }: LikeButtonProps) {
   }, [postSlug]);
 
   async function handleLike() {
-    if (loading) return;
+    if (loading || liked) return;
 
     setLoading(true);
 
     try {
+      const visitorId = getVisitorId();
+
       const response = await fetch("/api/likes", {
         method: "POST",
         headers: {
@@ -50,6 +75,7 @@ export default function LikeButton({ postSlug }: LikeButtonProps) {
         },
         body: JSON.stringify({
           slug: postSlug,
+          visitorId,
         }),
       });
 
@@ -60,7 +86,7 @@ export default function LikeButton({ postSlug }: LikeButtonProps) {
       const data = await response.json();
 
       setLikes(data.likes ?? likes);
-      setLiked(data.liked ?? !liked);
+      setLiked(data.liked ?? true);
     } catch (error) {
       console.error("Could not update like:", error);
     } finally {
@@ -72,8 +98,10 @@ export default function LikeButton({ postSlug }: LikeButtonProps) {
     <button
       type="button"
       onClick={handleLike}
-      disabled={loading}
-      aria-label={liked ? "Unlike this reflection" : "Like this reflection"}
+      disabled={loading || liked}
+      aria-label={
+        liked ? "You already liked this reflection" : "Like this reflection"
+      }
       className="
         group
         inline-flex
