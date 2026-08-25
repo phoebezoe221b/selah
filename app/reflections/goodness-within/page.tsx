@@ -38,7 +38,7 @@ export default function GoodnessWithinPage() {
             Let us look at <strong>Galatians 5:22 (NKJV):</strong>
           </p>
 
-          <blockquote className="rounded-xl border border-[var(--sea-200)] bg-[var(--sea-100)] p-8 font-serif text-lg leading-relaxed italic text-[var(--sea-800)]">
+          <blockquote className="rounded-lg border border-[var(--sea-200)] bg-[var(--sea-100)] p-8 font-serif text-md leading-relaxed italic text-[var(--sea-800)]">
             <strong>
               “But the fruit of the Spirit is love, joy, peace, longsuffering,
               kindness, goodness, faithfulness.”
@@ -56,7 +56,7 @@ export default function GoodnessWithinPage() {
             In <strong>2 Thessalonians 1:11 (NKJV):</strong>
           </p>
 
-          <blockquote className="rounded-xl border border-[var(--sea-200)] bg-[var(--sea-100)] p-8 font-serif text-lg leading-relaxed italic text-[var(--sea-800)]">
+          <blockquote className="rounded-lg border border-[var(--sea-200)] bg-[var(--sea-100)] p-8 font-serif text-md leading-relaxed italic text-[var(--sea-800)]">
             <strong>
               “Therefore, we also pray always for you that our God would count
               you worthy of this calling, and fulfil all the good pleasure of
@@ -85,7 +85,7 @@ export default function GoodnessWithinPage() {
             <strong>Ephesians 5:8–9 (NKJV)</strong> says:
           </p>
 
-          <blockquote className="rounded-xl border border-[var(--sea-200)] bg-[var(--sea-100)] p-8 font-serif text-lg leading-relaxed italic text-[var(--sea-800)]">
+          <blockquote className="rounded-lg border border-[var(--sea-200)] bg-[var(--sea-100)] p-8 font-serif text-md leading-relaxed italic text-[var(--sea-800)]">
             <strong>
               “For you were once darkness, but now you are light in the Lord.
               Walk as children of Light (for the fruit of the Spirit is in all
@@ -109,7 +109,7 @@ export default function GoodnessWithinPage() {
             <strong>Romans 15:14 (NKJV)</strong> says:
           </p>
 
-          <blockquote className="rounded-xl border border-[var(--sea-200)] bg-[var(--sea-100)] p-8 font-serif text-lg leading-relaxed italic text-[var(--sea-800)]">
+          <blockquote className="rounded-lg border border-[var(--sea-200)] bg-[var(--sea-100)] p-8 font-serif text-md leading-relaxed italic text-[var(--sea-800)]">
             <strong>
               “Now I myself am confident concerning you, my brethren, that you
               also are full of goodness, filled with all knowledge, able also
@@ -134,7 +134,7 @@ export default function GoodnessWithinPage() {
             <strong>John 15:4–5 (NKJV):</strong>
           </p>
 
-          <blockquote className="rounded-xl border border-[var(--sea-200)] bg-[var(--sea-100)] p-8 font-serif text-lg leading-relaxed italic text-[var(--sea-800)]">
+          <blockquote className="rounded-lg border border-[var(--sea-200)] bg-[var(--sea-100)] p-8 font-serif text-md leading-relaxed italic text-[var(--sea-800)]">
             <strong>
               “Abide in Me, and I in you. As the branch cannot bear fruit of
               itself, unless it abides in the Vine, neither can you, unless you
@@ -166,7 +166,7 @@ export default function GoodnessWithinPage() {
             David in <strong>Psalm 16:2 (NKJV)</strong> says:
           </p>
 
-          <blockquote className="rounded-xl border border-[var(--sea-200)] bg-[var(--sea-100)] p-8 font-serif text-lg leading-relaxed italic text-[var(--sea-800)]">
+          <blockquote className="rounded-lg border border-[var(--sea-200)] bg-[var(--sea-100)] p-8 font-serif text-md leading-relaxed italic text-[var(--sea-800)]">
             <strong>
               “O my soul, you have said to the Lord,
               <br />
@@ -245,33 +245,6 @@ export default function GoodnessWithinPage() {
 
         </div>
 
-        {/* Reflection Questions */}
-
-        <div className="mt-20 rounded-xl border border-[var(--sea-200)] bg-[var(--sea-100)] p-10">
-
-          <h2 className="font-serif text-xl text-[var(--sea-800)]">
-            <em>Pause &amp; Reflect</em>
-          </h2>
-
-          <div className="mt-6 space-y-4 text-lg leading-8 text-[var(--muted)]">
-
-            <p>
-              <em>
-                Where have you been trying to produce goodness through your
-                own strength instead of abiding in Christ?
-              </em>
-            </p>
-
-            <p>
-              <em>
-                What might it look like for God&apos;s goodness to flow through
-                your life this week?
-              </em>
-            </p>
-
-          </div>
-
-        </div>
 
         {/* Like Button */}
 
