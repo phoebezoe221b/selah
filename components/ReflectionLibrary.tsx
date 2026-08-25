@@ -12,8 +12,9 @@ const reflections = [
   },
   {
     title: "Goodness Within",
-    available: false,
-    featured: false,
+  href: "/reflections/goodness-within",
+  available: true,
+  featured: false,
   },
   {
     title: "Peace in the Storm",
