@@ -20,14 +20,14 @@ export default function Hero() {
     <>
       {/* =========================================================
           FIXED HORIZONTAL SELAH
-          Appears on the left after the user scrolls past the hero
+          Appears after scrolling beyond the hero
       ========================================================= */}
 
       <motion.div
         initial={false}
         animate={{
           opacity: showCornerSelah ? 1 : 0,
-          x: showCornerSelah ? 0 : -140,
+          x: showCornerSelah ? 0 : -160,
         }}
         transition={{
           duration: 0.45,
@@ -49,19 +49,23 @@ export default function Hero() {
             border-l-0
             border-[var(--gold)]
             bg-[var(--sea-800)]
-            px-6
-            py-3
+            px-5
+            py-2.5
             shadow-[0_15px_40px_rgba(0,0,0,.18)]
             backdrop-blur-md
+            sm:px-6
+            sm:py-3
           "
         >
           <span
             className="
               whitespace-nowrap
               font-serif
-              text-lg
-              tracking-[0.28em]
+              text-base
+              tracking-[0.22em]
               text-white
+              sm:text-lg
+              sm:tracking-[0.28em]
             "
           >
             SELAH
@@ -76,7 +80,7 @@ export default function Hero() {
       <section
         className="
           relative
-          min-h-screen
+          min-h-[100svh]
           overflow-hidden
           bg-[var(--background)]
         "
@@ -84,27 +88,35 @@ export default function Hero() {
         {/* Cinematic Background */}
         <HeroBackground />
 
-        {/* Main Hero Content */}
+        {/* =====================================================
+            MAIN HERO CONTENT
+        ===================================================== */}
+
         <div
           className="
             relative
             z-10
             flex
-            min-h-screen
+            min-h-[100svh]
             flex-col
             items-center
             justify-center
-            px-6
-            pb-20
-            pt-20
+            px-4
+            pb-24
+            pt-16
             text-center
+            sm:px-6
+            sm:pb-20
+            sm:pt-20
           "
         >
           {/* =====================================================
               STANLEY RHEMA CALVIN
           ===================================================== */}
 
-          <AnimatedName />
+          <div className="w-full max-w-full overflow-visible">
+            <AnimatedName />
+          </div>
 
           {/* =====================================================
               TAGLINE
@@ -125,12 +137,17 @@ export default function Hero() {
               ease: [0.22, 1, 0.36, 1],
             }}
             className="
-              mt-8
-              max-w-xl
-              text-sm
+              mt-6
+              max-w-[330px]
+              text-[10px]
               uppercase
-              tracking-[0.3em]
+              leading-5
+              tracking-[0.22em]
               text-[var(--muted)]
+              sm:mt-8
+              sm:max-w-xl
+              sm:text-sm
+              sm:tracking-[0.3em]
               md:mt-10
               md:text-lg
               md:tracking-[0.35em]
@@ -161,21 +178,26 @@ export default function Hero() {
               ease: [0.22, 1, 0.36, 1],
             }}
             className="
-              mt-10
+              mt-7
               w-full
-              max-w-4xl
+              max-w-[calc(100vw-32px)]
+              sm:mt-10
+              sm:max-w-4xl
               md:mt-12
             "
           >
-            {/* SELAH Title */}
+            {/* =================================================
+                SELAH TITLE
+            ================================================= */}
 
             <h2
               className="
                 font-serif
-                text-5xl
-                tracking-[0.3em]
+                text-4xl
+                tracking-[0.22em]
                 text-[var(--sea-900)]
-                sm:text-6xl
+                sm:text-5xl
+                sm:tracking-[0.3em]
                 md:text-7xl
                 lg:text-8xl
               "
@@ -191,16 +213,19 @@ export default function Hero() {
               className="
                 relative
                 mx-auto
-                mt-5
-                h-16
+                mt-4
+                h-14
                 w-full
                 max-w-3xl
                 overflow-hidden
-                rounded-xl
+                rounded-lg
                 border
                 border-[var(--gold)]
                 bg-[var(--sea-800)]
                 shadow-[0_20px_60px_rgba(0,0,0,.15)]
+                sm:mt-5
+                sm:h-16
+                sm:rounded-xl
                 md:h-20
               "
             >
@@ -218,10 +243,11 @@ export default function Hero() {
                 className="
                   absolute
                   inset-y-0
-                  w-32
+                  w-20
                   -skew-x-12
                   bg-white/20
                   blur-md
+                  sm:w-32
                 "
               />
 
@@ -234,14 +260,18 @@ export default function Hero() {
                   h-full
                   items-center
                   justify-center
+                  px-3
                 "
               >
                 <span
                   className="
-                    text-xs
+                    whitespace-nowrap
+                    text-[9px]
                     uppercase
-                    tracking-[0.35em]
+                    tracking-[0.2em]
                     text-white
+                    sm:text-xs
+                    sm:tracking-[0.35em]
                     md:text-lg
                     md:tracking-[0.5em]
                   "

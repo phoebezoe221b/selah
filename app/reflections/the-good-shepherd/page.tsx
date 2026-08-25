@@ -1,33 +1,36 @@
+import LikeButton from "@/components/LikeButton";
+
 export default function GoodShepherdPage() {
   return (
-    <main className="min-h-screen bg-[var(--background)] py-24">
-      <article className="mx-auto max-w-3xl px-6">
+    <main className="min-h-screen bg-[var(--background)] px-5 py-24 sm:px-6 sm:py-32">
+      <article className="mx-auto max-w-3xl">
 
         {/* Blog Header */}
 
-        <p className="uppercase tracking-[0.45em] text-sm text-[var(--gold)]">
+        <p className="text-sm uppercase tracking-[0.45em] text-[var(--gold)]">
           SELAH
         </p>
 
-        <h1 className="mt-3 font-serif text-5xl md:text-7xl text-[var(--sea-800)]">
+        <h1 className="mt-3 font-serif text-5xl text-[var(--sea-800)] sm:text-6xl md:text-7xl">
           The Good Shepherd
         </h1>
 
-        <p className="mt-8 text-lg leading-8 text-[var(--muted)] italic">
-          Selah – Simple meditations that become writings, answers, poems,
-          revelations through the Word of God, transforming us every day.
+        <p className="mt-8 text-lg leading-8 italic text-[var(--muted)]">
+          Selah – Simple meditations that become writings, answers,
+          poems, revelations through the Word of God,
+          transforming us every day.
         </p>
 
         <div className="my-12 h-px bg-gradient-to-r from-transparent via-[var(--gold)] to-transparent" />
 
-        {/* Poem */}
+        {/* Reflection */}
 
-        <div className="space-y-8 text-xl leading-[2.2] text-[var(--text)]">
+        <div className="space-y-10 text-lg leading-[2.1] text-[var(--foreground)] sm:text-xl sm:leading-[2.2]">
 
           <p>
             My worries and anxieties weigh heavily;
             <br />
-            They pull me down like Earth's gravity.
+            They pull me down like Earth&apos;s gravity.
             <br />
             Who will set me free from this?
           </p>
@@ -62,17 +65,55 @@ export default function GoodShepherdPage() {
 
         </div>
 
-        {/* Scripture */}
+        {/* Like */}
 
-        <div className="mt-20 rounded-3xl bg-[var(--sea-100)] p-10 border border-[var(--sea-200)]">
+        <div className="mt-16 flex justify-center sm:justify-start">
+          <LikeButton postSlug="the-good-shepherd" />
+        </div>
 
-          <p className="font-serif text-3xl text-[var(--sea-800)] leading-relaxed italic">
-            "The Lord is my Shepherd; I shall not want."
+        {/* Reflection Question */}
+
+        <div className="mt-20">
+
+          <h2
+            className="
+              font-serif
+              text-3xl
+              text-[var(--sea-800)]
+              sm:text-4xl
+            "
+          >
+            Take a Moment
+          </h2>
+
+          <p className="mt-4 text-base leading-7 text-[var(--muted)] sm:text-lg">
+            What fear or burden do you need to place
+            into the Shepherd&apos;s hands today?
           </p>
 
-          <p className="mt-6 uppercase tracking-[0.35em] text-sm text-[var(--gold)]">
-            Psalm 23:1
-          </p>
+          <textarea
+            className="
+              mt-8
+              h-40
+              w-full
+              resize-none
+              rounded-3xl
+              border
+              border-[var(--sea-200)]
+              bg-white/50
+              p-5
+              text-base
+              text-[var(--foreground)]
+              outline-none
+              transition
+              placeholder:text-[var(--muted)]
+              focus:border-[var(--gold)]
+              focus:ring-1
+              focus:ring-[var(--gold)]
+              sm:p-6
+            "
+            placeholder="Write your reflection..."
+          />
 
         </div>
 

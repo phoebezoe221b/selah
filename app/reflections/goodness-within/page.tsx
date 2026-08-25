@@ -1,3 +1,5 @@
+import LikeButton from "@/components/LikeButton";
+
 export default function GoodnessWithinPage() {
   return (
     <main className="min-h-screen bg-[var(--background)] px-6 py-28">
@@ -117,7 +119,7 @@ export default function GoodnessWithinPage() {
 
           <p>
             Paul tells the believers that they are “full of goodness.” That is
-            a powerful description of a believer's life. What fills us
+            a powerful description of a believer&apos;s life. What fills us
             eventually flows out of us.
           </p>
 
@@ -248,10 +250,11 @@ export default function GoodnessWithinPage() {
         <div className="mt-20 rounded-xl border border-[var(--sea-200)] bg-[var(--sea-100)] p-10">
 
           <h2 className="font-serif text-xl text-[var(--sea-800)]">
-            <em>Pause & Reflect</em>
+            <em>Pause &amp; Reflect</em>
           </h2>
 
           <div className="mt-6 space-y-4 text-lg leading-8 text-[var(--muted)]">
+
             <p>
               <em>
                 Where have you been trying to produce goodness through your
@@ -261,12 +264,19 @@ export default function GoodnessWithinPage() {
 
             <p>
               <em>
-                What might it look like for God's goodness to flow through
+                What might it look like for God&apos;s goodness to flow through
                 your life this week?
               </em>
             </p>
+
           </div>
 
+        </div>
+
+        {/* Like Button */}
+
+        <div className="mt-14 flex justify-center">
+          <LikeButton postSlug="goodness-within" />
         </div>
 
       </article>

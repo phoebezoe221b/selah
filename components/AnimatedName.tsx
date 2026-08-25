@@ -19,7 +19,7 @@ export default function AnimatedName() {
   ];
 
   return (
-    <div className="overflow-hidden">
+    <div className="w-full overflow-visible px-1">
       <motion.h1
         initial="hidden"
         animate="visible"
@@ -33,17 +33,23 @@ export default function AnimatedName() {
         }}
         className="
           flex
+          w-full
           flex-nowrap
           items-center
           justify-center
-          gap-3
           whitespace-nowrap
           font-serif
-          text-4xl
           font-medium
+
+          gap-1
+          text-[clamp(1.85rem,8vw,2.5rem)]
+
+          sm:gap-3
           sm:text-5xl
+
           md:gap-6
           md:text-7xl
+
           lg:text-8xl
         "
       >
